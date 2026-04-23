@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Agency Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0d3b66, #1d70b8);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .app-box {
+            max-width: 750px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.12);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        button {
+            background-color: white;
+            color: #0d3b66;
+            border: none;
+            padding: 12px 22px;
+            margin: 10px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e8eef5;
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        #slogan {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: white;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-box">
+        <h1>Marketing Agency Name Generator</h1>
+        <p>Click the button to generate a possible name and slogan for a future marketing agency.</p>
+
+        <button onclick="generateAgency()">Generate Name</button>
+
+        <div id="result">Your agency name will appear here.</div>
+        <div id="slogan">Your slogan will appear here.</div>
+
+        <a href="scratch.html">Back to Scratch Page</a>
+    </div>
+
+    <script>
+        const firstWords = ["Blue", "Elevate", "Prime", "Vision", "Launch", "Summit", "Bold", "Next"];
+        const secondWords = ["Brand", "Growth", "Creative", "Strategy", "Media", "Momentum", "Reach", "Edge"];
+        const endings = ["Agency", "Studio", "Marketing", "Partners", "Collective", "Solutions"];
+
+        const slogans = [
+            "Helping brands grow with purpose.",
+            "Strategy that turns attention into action.",
+            "Creative ideas. Real business results.",
+            "Building brands that people remember.",
+            "Marketing with clarity, energy, and direction.",
+            "Where business growth meets smart storytelling."
+        ];
+
+        function generateAgency() {
+            const first = firstWords[Math.floor(Math.random() * firstWords.length)];
+            const second = secondWords[Math.floor(Math.random() * secondWords.length)];
+            const ending = endings[Math.floor(Math.random() * endings.length)];
+            const slogan = slogans[Math.floor(Math.random() * slogans.length)];
+
+            document.getElementById("result").textContent = `${first} ${second} ${ending}`;
+            document.getElementById("slogan").textContent = slogan;
+        }
+    </script>
+
+</body>
+</html>
